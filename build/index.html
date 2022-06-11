@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>App</title>
+ 
+  <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/font-awesome/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+
+</head>
+<body>
+  
+
+
+      <!-- Header -->
+  <header class="duik-header">
+
+
+
+
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark gradient-primary position-absolute left-0 right-0 flex-nowrap z-index-3">
+      <div class="container">
+        <a class="navbar-brand"  href="#">logo</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+          <ul class="navbar-nav mt-2 mt-lg-0 small">
+            <li class="nav-item mb-2 mb-lg-0">
+              <a class="nav-link" href="#">à propos</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item ml-lg-6 mb-2 mb-lg-0">
+              <a class="nav-link px-0" href="index.html" >Vérifier</a>
+            </li>
+            <li class="nav-item ml-lg-6 mb-2 mb-lg-0">
+              <a class="nav-link px-0" href="minting.html" >Délivrer</a>
+            </li>
+            <li class="nav-item ml-lg-6 mb-2 mb-lg-0">
+              <a class="nav-link px-0" href="#" >Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+  </header>
+  <!-- End Header -->
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Promo Section -->
+ <section class="duik-promo gradient-primary text-center">
+    <div class="container duik-promo-container">
+      <div class="d-flex justify-content-center position-relative mh-35rem pt-11 py-6">
+        <div class="w-md-75 w-lg-50 mt-10">
+          <h1 class="h2 text-white mb-3">Votre diplome est en toute sécurité sur la BlockChain</h1>
+
+          <form class="input-group mb-3" onsubmit="App.viewCertificate();">
+            <input class="form-control border-0" type="search" placeholder="Hash code" id="HashBlock">
+           <!-- <span class="input-group-append p-0">
+                    <button class="btn text-muted" type="submit"><i class="fas fa-search"></i></button>
+                </span>-->
+
+           <button class="btn btn-success mb-3 ml-3" type="submit" >Vérifier</button>
+    
+            
+           
+          </form>
+
+          
+
+          <p class="font-weight-light small text-left"><span class="mr-2">NB:</span> <a class="text-white mr-1" href="#">Saisissez le Hash code que vous avez recu depuis votre organisme certifiant.</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SVG BG -->
+    <svg class="position-absolute bottom-0 left-0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 323" enable-background="new 0 0 1920 323" xml:space="preserve">
+      <polygon fill="#ffffff" style="fill-opacity: .05;" points="-0.5,322.5 -0.5,121.5 658.3,212.3 "></polygon>
+      <polygon fill="#ffffff" style="fill-opacity: .1;" points="-2,323 1920,323 1920,-1 "></polygon>
+    </svg>
+    <!-- End SVG BG -->
+
+    <!-- SVG BG Separator -->
+    <svg class="position-absolute bottom-0 left-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 300">
+      <path id="Path_1" fill="#fff" data-name="Path 1" d="M0,1081.586H1920v-300Z" transform="translate(0 -781.586)"/>
+    </svg>
+    <!-- SVG BG Separator -->
+  </section>
+  <!-- End Promo Section -->
+
+  <main>
+    <section class="pt-5 pb-11">
+      <div class="container">
+        <div class="w-md-75 w-lg-50 mx-auto text-center mb-5">
+          <h2 class="h3 text-center"></h2>
+          <div id="result" ></div>
+        </div>
+        
+      </div>
+       
+    </section>
+
+   
+  </main>
+
+<!--
+<jw-modal id="custom-modal-1">
+    <h1>A Custom Modal Window!</h1>
+    <p>Home page text: <input type="text" /></p>
+    <button (click)="closeModal('custom-modal-1');">Close</button>
+</jw-modal>
+
+<jw-modal  class="position-relative" id="custom-modal-2"  >
+  <div style="height: 100%;width: 100%;">
+    <div class="card mb-3" style="height: 100%;width: 100%;background-color: rgb(255, 255, 255) ;">
+      <div class="row g-0" style="height: 100%;">
+        <div class="col-md-8">
+
+
+
+          <div class="cert-container" id="content" #content>
+            <div class="border-gray">
+              <div class="border-red">
+
+
+                <div class="content"   >
+                  <div style="margin: 20px 20px 20px 20px; " >
+                    <img id="mt-logo" src="#"  alt="Cryptoficat" />
+                  </div>
+
+                     <div style="display: flex; justify-content :space-between;margin: 30px 40px 30px 40px; margin-bottom: 40px; ">
+                    
+                        <div>
+                          ENSIAS
+                        </div>
+
+                        <div >
+                          UM5
+                        </div>
+                      </div>
+
+                    
+                      <div class="copytext-container" style="margin-top: 50px;" >
+                          <div class="congrats-copytext" style="margin-bottom: 30px">
+                              <h3 style="margin-bottom: 30px;">Ingénieur d'etat</h3><br>
+                              <h4>Congratulations <span>BRAHIM</span><span> BOUFOUS</span></h4><br>
+                              <h5 id="user-id-string">User Id: <span>G746120</span></h5>
+                          </div>
+                          
+                          <div class="course-copytext" style="margin-bottom: 30px" >
+                              <h3><span>Software engineering</span></h3><br>
+                              <h5>grade : <span> with Honor</span></h5>
+                              
+                          </div>
+                      </div>
+
+
+                      <div style="display: flex; justify-content :space-between; margin: 30px 50px 30px 40px;">
+                    
+                        <ul class="credentials" >
+                          <li>
+                              <p id="cert-id">Hash code: <span>7xo83g4u29eje72he9djsbcur7w364726437</span></p>
+                          </li>
+                        </ul>
+
+                        <div style="text-align: left">
+                          signature
+                        </div>
+                      </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-md-4" style="height: 100%;" >
+
+          <div class="card-body" style="height: 90%;">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          
+          </div>
+
+          <div class="card-footer" style="display:flex; justify-content:space-around "> 
+            <button class="btn btn-danger" style="bottom: 0px;" (click)="closeModal('custom-modal-2');">Close</button>
+            <button class="btn btn-success" style="bottom: 0px;" (click)="exportAsPDF();">Exporter (.pdf)</button>
+            <button class="btn btn-warnings" style="bottom: 0px;" (click)="exportAsPDF();">Close</button>
+          </div> 
+
+        </div>
+      </div>
+    </div>
+      </div>
+</jw-modal>
+
+-->
+
+
+
+
+
+
+
+
+
+
+<!-------------------------------------------------------------------------------------------->
+    <!-- JS Global Compulsory -->
+    <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+    <script src="assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    <!-- JS -->
+    <script src="assets/js/main.js"></script>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/web3/dist/web3.min.js"></script>
+    <script src="node_modules/truffle-contract/dist/truffle-contract.js"></script>
+    <script src="app.js"></script>
+  
+
+</body>
+</html>

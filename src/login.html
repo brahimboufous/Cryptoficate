@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>App</title>
+ 
+  <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/font-awesome/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+
+      <!-- Bootstrap CSS -->
+      
+     
+
+</head>
+<body>
+  
+
+
+      <!-- Header -->
+  <header class="duik-header">
+
+
+
+
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark gradient-primary position-absolute left-0 right-0 flex-nowrap z-index-3">
+      <div class="container">
+        <a class="navbar-brand"  href="#">logo</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+          <ul class="navbar-nav mt-2 mt-lg-0 small">
+            <li class="nav-item mb-2 mb-lg-0">
+              <a class="nav-link" href="#">à propos</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item ml-lg-6 mb-2 mb-lg-0">
+              <a class="nav-link px-0" href="index.html" >Vérifier</a>
+            </li>
+            <li class="nav-item ml-lg-6 mb-2 mb-lg-0" id="superlogmint">
+              <a class="nav-link px-0" href="#" aria-disabled="true" >Délivrer</a>
+            </li>
+            <li class="nav-item ml-lg-6 mb-2 mb-lg-0">
+              <a class="nav-link px-0  font-weight-bold" href="login.html" style="color :white" >Se connecter</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+  </header>
+  <!-- End Header -->
+
+
+
+
+
+
+ <!-- Promo Section -->
+ <section class="duik-promo bg-light.bg-gradient text-center">
+    <div class="container duik-promo-container">
+      <div class="d-flex justify-content-center position-relative mh-35rem pt-11 py-6">
+        <div class="w-md-75 w-lg-50 mt-10">
+         
+        
+            <form onsubmit="return login()">
+                <img class="mb-4" src="#" alt="" height="300">
+                <h1 class="h3 mb-3 fw-normal"><b>Se Connecter pour pouvoir délivrer un diplome</b></h1>
+            
+                <div class="form-floating"  style="text-align:left">
+                    <label for="floatingInput">Username</label>
+                    <input type="email" class="form-control" id="username" placeholder="name@example.com">
+                  </div>
+                <div class="form-floating"  style="text-align:left;margin-top:20px ;">
+                    <label for="floatingPassword">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password">
+                  </div>
+            
+                <button class="w-100  btn btn-lg btn-primary mt-3" style="height: 60px;" type="submit">Se connecter</button>
+             </form>
+          
+
+            </div>
+      </div>
+    </div>
+
+ 
+  </section>
+  <!-- End Promo Section -->
+
+
+
+   
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+    
+
+    <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+    <script src="assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    <!-- JS -->
+    <script src="assets/js/main.js"></script>
+
+    <script src="login.js"></script> 
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendor/web3/dist/web3.min.js"></script>
+    <script src="vendor/truffle-contract/dist/truffle-contract.js"></script>
+    <script src="app.js"></script>
+  
+
+
+
+</body>
+</html>
