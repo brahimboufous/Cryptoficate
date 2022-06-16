@@ -69,29 +69,20 @@ App = {
     if (App.loading) {
       return
     }
-
-    // Update app loading state
     App.setLoading(true)
-
-    // Render Account
     $('#account').html(App.account)
-
-   
-
-    // Update loading state
     App.setLoading(false)
   },
 
   addCertificate: async () => {
-    App.setLoading(true)
     const recipient = $('#name').val()
     const org = $('#organisme').val()
     const grade = $('#mention').val()
     const cin = $('#cin').val()
     const diplome = $('#diplome').val()
     const specialite = $('#specialite').val()
-    await App.certificate.issueCertificate(recipient,cin,org,diplome,specialite,grade,{from: web3.eth.accounts[0], gas: 3000000 })
-    window.location.reload()
+    RValues=await App.certificate.issueCertificate(recipient,cin,org,diplome,specialite,grade,{from: web3.eth.accounts[0], gas: 3000000 })
+    return RValues;
   },
 
 
@@ -99,31 +90,13 @@ App = {
    
       view = await App.certificate.viewCertificate(hash)
       return view;
-      //App.Certificate=view
- /*     console.log("ce diplome existe")
-      console.log(view[0],view[1],view[2])
-      Swal.fire({
-        text: view,
-        icon: 'success',
-        confirmButtonText: 'OK'
-      }).then((result) => {
-        if (result.isConfirmed) {
-         // window.location.href = './login.html';
-         console.log("FIN")
-        }
-      });
-   */  
     
   },
 
 
   verifyCertificate: async (hash) => {
-    //App.setLoading(true)
-    //const hash = $('#HashBlock').val()
-    //web3.fromAscii(val)
     verify = await App.certificate.verifyCertificateHash(hash)
     return verify
-   // window.location.reload()
   },
 
   setLoading: (boolean) => {
@@ -173,8 +146,6 @@ function test() {
           confirmButtonText: 'voir'
         }).then((result) => {
           if (result.isConfirmed) {
-            //window.location.href = './index.html';
-            //App.viewCertificate(hash);
             viewDiplome(hash);
           }
         });
@@ -198,7 +169,7 @@ function viewDiplome(hash) {
       width: 1400,
       //template: '#my-template',
       confirmButtonText: 'cancel',
-      html:'<div class="jw-modal " ><div class="jw-modal-body " > <jw-modal class="position-relative" > <div > <div class="card mb-3" style="width: 100%;background-color: rgb(255, 255, 255) ;">  <div class="row g-0" > <div class="col-md-8"> <div class="cert-container" id="content" #content > <div class="border-gray"> <div class="border-red"> <div class="content" > <div style="margin: 10px; " > <img id="mt-logo" src="#" alt="Cryptoficat" /> </div> <div style="display: flex; justify-content :space-between;margin: 30px 40px 30px 40px; margin-bottom: 20px; "> <div id="inOrg">'+ view[2] +'</div> <div > Cryptoficat </div> </div> <div class="copytext-container" style="margin-top: 20px;" > <div class="congrats-copytext" style="margin-bottom: 20px"> <h3 style="margin-bottom: 30px;" id="inDip">'+ view[3] +'</h3><br> <h4>Congratulations <p #inName>'+ view[0] +'</p></h4><br> <h5 id="user-id-string">User Id: <span id="inCIN">'+ view[1] +'</span></h5> </div> <div class="course-copytext" style="margin-bottom: 20px" > <h3><span id="inSpec">'+ view[5] +'</span></h3><br> <h5>grade : <span id="inGrade"> '+ view[4] +'</span></h5> </div> </div> <div style="display: flex; justify-content :space-between; margin: 10px;"> <ul class="credentials" > <li> <p id="cert-id">Hash code: <span>'+hash+'</span></p> </li> </ul> <div style="text-align: left"> signature </div> </div> </div> </div> </div> </div> </div> <div class="col-md-4" > <div class="card-body" style="height: 85%;" > <h5 class="card-title">Card title</h5> <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p><img  src="assets/img/verified.png" alt="" height="120"> <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> </div> <div class="card-footer" style="display:flex; justify-content:space-around "> <button class="btn btn-success" style="bottom: 0px;" onclick="exportAsPdf();">Exporter (.pdf)</button> </div> </div> </div> </div> </div> </jw-modal></div></div><div class="jw-modal-background"></div>'
+      html:'<div class="jw-modal " ><div class="jw-modal-body " > <jw-modal class="position-relative" > <div > <div class="card mb-3" style="width: 100%;background-color: rgb(255, 255, 255) ;">  <div class="row g-0" > <div class="col-md-8"> <div class="cert-container" id="content" #content > <div class="border-gray"> <div class="border-red"> <div class="content" > <div style="margin: 10px; " > <div>Diplochain</div> </div> <div style="display: flex; justify-content :space-between;margin: 30px 40px 30px 40px; margin-bottom: 20px; "> <div id="inOrg">'+ view[2] +'</div> <div >  </div> </div> <div class="copytext-container" style="margin-top: 20px;" > <div class="congrats-copytext" style="margin-bottom: 20px"> <h3 style="margin-bottom: 30px;" id="inDip">'+ view[3] +'</h3><br> <h4>Congratulations <p #inName style=" font-weight: 500;font-size: 19px;">'+ view[0] +'</p></h4><br> <h5 id="user-id-string">CIN : <span id="inCIN">'+ view[1] +'</span></h5> </div> <div class="course-copytext" style="margin-bottom: 20px" > <h3><span id="inSpec" style=" font-size: 17px;">'+ view[5] +'</span></h3><br> <h5>mention : <span id="inGrade"> '+ view[4] +'</span></h5> </div> </div> <div style="display: flex; justify-content :space-between; margin: 10px;"> <ul class="credentials" > <li> <p id="cert-id">Hash code: <span>'+hash+'</span></p> </li> </ul> <div style="text-align: left"> <a href="https://www.freepnglogos.com/pics/signature" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/signature-png/signatures-download-clipart-29.png" width="100" alt="signatures download clipart" /></a> </div> </div> </div> </div> </div> </div> </div> <div class="col-md-4" > <div class="card-body" style="height: 85%;" > <h5 class="card-title">Vue du diplome</h5> <p class="card-text">Ce diplome est immutable.</p><img  src="assets/img/verified.png" alt="" height="120"> <p class="card-text"><small class="text-muted">vous pouvez l`exporter sous format PDF</small></p> </div> <div class="card-footer" style="display:flex; justify-content:space-around "> <button class="btn btn-success" style="bottom: 0px;" onclick="exportAsPdf();">Exporter (.pdf)</button> </div> </div> </div> </div> </div> </jw-modal></div></div><div class="jw-modal-background"></div>'
     });
      
 });
@@ -207,5 +178,49 @@ return false;
 }
 
 
+function mint() {
+  const email ="brahimboufous3.14@gmail.com";
+  const name="Monsieur";
+  App.addCertificate().then(function(etat) {
 
- 
+    console.log(etat.logs[0].args.record)
+    code=etat.logs[0].args.record;
+    console.log(sendEmail2(code,email,name))
+  });
+
+  return false;
+
+}
+
+
+
+
+
+function sendEmail2(code,email,name) {
+
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("GET", `http://localhost:9005/sendMail?code=${code}&email=${email}&name=${name}`);
+  xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  xhttp.send(JSON.stringify({
+    "code": code,
+    "email": email,
+    "name": name
+
+  }));
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4) {
+      const objects = JSON.parse(this.responseText);
+      console.log(objects);
+      if (Object.keys( objects ).length != 0) {
+       
+        Swal.fire({
+          text: "Le diplome a été deposé. "+"\n Le Hash code est envoyé au détenteur du diplome ",
+          icon: 'success',
+          confirmButtonText: 'OK'
+        })
+      } 
+    }
+  };
+  return false;
+}
+

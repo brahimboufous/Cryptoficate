@@ -63,3 +63,42 @@ function login() {
   };
   return false;
 }
+
+
+function login2() {
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("GET", `http://localhost:9005/login?username=${username}&password=${password}`);
+  xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  xhttp.send(JSON.stringify({
+    "username": username,
+    "password": password
+  }));
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4) {
+      const objects = JSON.parse(this.responseText);
+      console.log(objects);
+      if (Object.keys( objects ).length != 0) {
+        localStorage.setItem("jwt", objects);
+        Swal.fire({
+          text: "logged in",
+          icon: 'success',
+          confirmButtonText: 'OK'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = './index.html';
+          }
+        });
+      } else {
+        Swal.fire({
+          text: "Failed to log in",
+          icon: 'error',
+          confirmButtonText: 'OK'
+        });
+      }
+    }
+  };
+  return false;
+}

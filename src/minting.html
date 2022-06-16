@@ -8,7 +8,7 @@
   <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
   <link rel="stylesheet" href="assets/vendor/font-awesome/css/fontawesome-all.min.css">
   <link rel="stylesheet" href="assets/css/theme.css">
-
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 <body>
   
@@ -26,7 +26,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark gradient-primary position-absolute left-0 right-0 flex-nowrap z-index-3">
           <div class="container">
-            <a class="navbar-brand"  href="#">logo</a>
+            <a class="navbar-brand"  href="#">Diplochain</a>
     
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -78,7 +78,7 @@
               </div>
     
               <!-- Contact Form -->
-              <form  onSubmit="App.addCertificate();" >
+              <form  onsubmit="return mint();" >
                 <div class="row">
                   <div class="col-md-6 form-group mb-4">
                     <label for="name">Nom complet (certifié)</label>
@@ -134,48 +134,9 @@
           </div>
         </div>
     
-    <!-- SVG BG 
-    <svg class="position-absolute bottom-0 left-0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 323" enable-background="new 0 0 1920 323" xml:space="preserve">
-        <polygon fill="#ffffff" style="fill-opacity: .05;" points="-0.5,322.5 -0.5,121.5 658.3,212.3 "></polygon>
-        <polygon fill="#ffffff" style="fill-opacity: .1;" points="-2,323 1920,323 1920,-1 "></polygon>
-      </svg>
-     End SVG BG -->
-  
-
-      </section>
-      <!-- End Promo Section
-
-    <div class="container-fluid">
-        <div class="row">
-          <main role="main" class="col-lg-12 d-flex justify-content-center">
-            <div id="loader" class="text-center">
-              <p class="text-center">Loading...</p>
-            </div>
-            <div id="content">
-              <form onSubmit="App.addCertificate(); ">
-                <input id="newTask1" type="text" class="form-control" placeholder="name ..." required>
-                <input id="newTask2" type="text" class="form-control" placeholder="org ..." required>
-                <input id="newTask3" type="text" class="form-control" placeholder="grade ..." required>
-                <input id="newTask4" type="text" class="form-control" placeholder="details ..." required>
-                <button type="submit" > Ajouter certificat</button>
-              </form>
-            </div>
-            </main>
-          </div>
-        </div>
-
- -->
 
 
-
-
-
-
-
-
-
-
-
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
 
 <!-------------------------------------------------------------------------------------------->
     <!-- JS Global Compulsory -->
@@ -184,6 +145,7 @@
     <script src="assets/vendor/popper.js/dist/umd/popper.min.js"></script>
     <script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
     <!-- JS -->
     <script src="assets/js/main.js"></script>
 
